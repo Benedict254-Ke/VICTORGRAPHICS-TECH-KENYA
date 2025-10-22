@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin Dashboard — Bookings</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+    body { 
+      font-family: 'Montserrat', sans-serif; 
+      background: #f4f7fa; 
+      color: #222; 
+      margin: 0; 
+      padding: 0;
+    }
+
+    /* Navbar */
+    nav { 
+      background: #007BFF; 
+      padding: 15px 30px; 
+      color: #fff; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav h2 { font-weight: 700; font-size: 22px; }
+
+    nav .nav-links button { 
+      background: #ff416c; 
+      border: none; 
+      padding: 8px 16px; 
+      margin-left: 10px; 
+      color: #fff; 
+      font-weight: 600; 
+      border-radius: 6px; 
+      cursor: pointer; 
+      transition: 0.3s;
+    }
+
+    nav .nav-links button:hover { background: #ff4b2b; }
+
+    /* Page header */
+    h1 { 
+      text-align: center; 
+      margin: 25px 0; 
+      font-size: 28px;
+      color: #333;
+    }
+
+    /* Table container */
+    #bookingsContainer { 
+      max-width: 1200px; 
+      margin: auto; 
+      overflow-x: auto; 
+      padding: 0 20px 40px;
+    }
+
+    table { 
+      width: 100%; 
+      border-collapse: collapse; 
+      background: #fff;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td { 
+      border: 1px solid #ddd; 
+      padding: 12px 15px; 
+      text-align: left; 
+      font-size: 14px;
+    }
+
+    th { 
+      background: #007BFF; 
+      color: #fff; 
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) { background: #f9f9f9; }
+
+    tr:hover { background: #f1f1f1; transition: 0.3s; }
+
+    .delete-btn { 
+      background: crimson; 
+      color: white; 
+      border: none; 
+      padding: 6px 12px; 
+      cursor: pointer; 
+      border-radius: 6px; 
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .delete-btn:hover { background: darkred; }
+
+    /* Responsive */
+    @media(max-width: 768px){
+      nav { flex-direction: column; align-items: flex-start; }
+      nav .nav-links { margin-top: 10px; }
+      table, th, td { font-size: 13px; }
+      h1 { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h2>Admin Dashboard</h2>
+    <div class="nav-links">
+      <button id="updateProfileBtn">Update Profile</button>
+      <button id="createAdminBtn">Create Admin</button>
+      <button id="logoutBtn">Logout</button>
+    </div>
+  </nav>
+
+  <h1>📋 All Bookings</h1>
+  <div id="bookingsContainer">
+    <table id="bookingsTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Service</th>
+          <th>Date</th>
+          <th>Note</th>
+          <th>Created</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="bookingsBody">
+        <tr><td colspan="8">Loading bookings...</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    // Simple protection
+    if(!sessionStorage.getItem('adminLoggedIn')){
+      window.location.href = 'login.html';
+    }
+
+    // Navbar buttons
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      sessionStorage.clear();
+      window.location.href = 'login.html';
+    });
+    document.getElementById('updateProfileBtn').addEventListener('click', () => {
+      window.location.href = 'update-admin.html';
+    });
+    document.getElementById('createAdminBtn').addEventListener('click', () => {
+      window.location.href = 'create-admin.html';
+    });
+
+    // Load bookings
+    async function loadBookings() {
+      const tbody = document.getElementById("bookingsBody");
+      tbody.innerHTML = "<tr><td colspan='8'>Loading...</td></tr>";
+
+      try {
+        const res = await fetch("http://localhost:5000/api/bookings");
+        const bookings = await res.json();
+
+        if (!bookings.length) {
+          tbody.innerHTML = "<tr><td colspan='8'>No bookings yet.</td></tr>";
+          return;
+        }
+
+        tbody.innerHTML = bookings.map(b => `
+          <tr>
+            <td>${b.id}</td>
+            <td>${b.name}</td>
+            <td>${b.phone}</td>
+            <td>${b.service}</td>
+            <td>${b.date}</td>
+            <td>${b.note || ""}</td>
+            <td>${b.created_at}</td>
+            <td><button class="delete-btn" onclick="deleteBooking(${b.id})">Delete</button></td>
+          </tr>
+        `).join("");
+      } catch (err) {
+        tbody.innerHTML = `<tr><td colspan='8'>❌ Error loading bookings</td></tr>`;
+        console.error(err);
+      }
+    }
+
+    async function deleteBooking(id) {
+      if (!confirm("Delete this booking?")) return;
+      try {
+        await fetch(`http://localhost:5000/api/bookings/${id}`, { method: "DELETE" });
+        loadBookings();
+      } catch (err) {
+        alert("Failed to delete booking");
+        console.error(err);
+      }
+    }
+
+    loadBookings();
+  </script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VictorGraphics Cyber Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="main.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="C:\Users\Mr.Asira\Desktop\LULU B WORKS\victorgraphics\frontend\cyber dp pic.jpeg" alt="VictorGraphics logo" class="logo">
+        <div>
+          <h1>VICTOR AND SONS COMPUTERS AND TECH SOLUTIONS KENYA</h1>
+          <p class="tag">CYBER  AND ONLINE SERVICES</p>
+        </div>
+      </div>
+
+      <nav class="main-nav" id="mainNav">
+        <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h2>Reliable cyber & e-services for individuals and businesses</h2>
+          <p>Printing • Photocopy • E-Citizen • Passport help • Driving license • KRA services and more. Fast, secure, trusted.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="services.html">View Services</a>
+            <a class="btn btn-outline" href="contact.html">Book Now</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <!-- placeholder graphic -->
+          <div class="device-card">
+            <svg width="220" height="160" viewBox="0 0 220 160" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0" y="0" width="220" height="160" rx="10" fill="#f7fbff"/>
+              <text x="110" y="86" font-size="18" text-anchor="middle" fill="#0a3f78" font-family="Montserrat, sans-serif">VICTORGRAPHICS</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quick-services container">
+      <h3>Popular Services</h3>
+      <div class="grid grid-3">
+        <div class="card">
+          <h4>Printing & Design</h4>
+          <p>Wedding cards, posters, banners, online printing and lamination.</p>
+        </div>
+        <div class="card">
+          <h4>E-Citizen & Government Services</h4>
+          <p>eCitizen assistance, KRA services, NTSA, GHRS payslips, NHIF/NSSF forms.</p>
+        </div>
+        <div class="card">
+          <h4>Documents & Applications</h4>
+          <p>Passport application, work permits, visas, driving licence support.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="why container">
+      <h3>Why choose VictorGraphics?</h3>
+      <ul class="benefits">
+        <li>Fast turnaround — high-quality prints and scanning</li>
+        <li>Assistance with gov’t portals and forms</li>
+        <li>Secure handling of private documents</li>
+      </ul>
+    </section>
+
+    <section class="cta-strip">
+      <div class="container cta-inner">
+        <div>
+          <h4>Want to reserve a slot or request a custom print?</h4>
+          <p>Use our online booking form — we’ll confirm by phone or WhatsApp.</p>
+        </div>
+        <div>
+          <a class="btn btn-white" href="contact.html">Book Online</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<section class="newsletter">
+  <h2>Join Our Newsletter</h2>
+  <p>Subscribe to get the latest updates, new releases, and exclusive offers from Lulu B 💌</p>
+
+  <form id="newsletterForm">
+    <input type="email" id="email" placeholder="Enter your email address" required>
+    <button type="submit">Subscribe</button>
+  </form>
+
+  <p id="responseMsg"></p>
+
+  <script>
+    document.getElementById("newsletterForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("email").value.trim();
+      const responseMsg = document.getElementById("responseMsg");
+
+      responseMsg.textContent = "Submitting...";
+      responseMsg.style.color = "#555";
+
+      try {
+        const res = await fetch("http://localhost:5000/newsletter/subscribe", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email })
+        });
+
+        const data = await res.json();
+        responseMsg.textContent = data.message || data.error;
+        responseMsg.style.color = data.message ? "#2ecc71" : "#e74c3c";
+        document.getElementById("email").value = "";
+      } catch {
+        responseMsg.textContent = "Something went wrong. Try again!";
+        responseMsg.style.color = "#e74c3c";
+      }
+    });
+  </script>
+</section>
+
+
+<!-- Thank You Popup -->
+<div id="thankYouPopup" class="popup">
+  <div class="popup-content">
+    <h3>🎉 Thank You for Subscribing!</h3>
+    <p>You've successfully joined our newsletter. Stay tuned for updates!</p>
+    <button id="closePopup">Close</button>
+  </div>
+</div>
+
+<style>
+  .newsletter {
+    background: linear-gradient(135deg, #000, #222);
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+    border-radius: 12px;
+    max-width: 700px;
+    margin: 50px auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .newsletter h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+
+  .newsletter p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+    color: #ddd;
+  }
+
+  .newsletter form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .newsletter input {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 6px;
+    width: 280px;
+    max-width: 100%;
+    font-size: 1rem;
+  }
+
+  .newsletter button {
+    padding: 12px 20px;
+    border: none;
+    background: #e91e63;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .newsletter button:hover {
+    background: #ff4081;
+    transform: scale(1.05);
+  }
+
+  #responseMsg {
+    margin-top: 20px;
+    font-size: 0.95rem;
+    color: #2ecc71;
+  }
+
+  @media (max-width: 500px) {
+    .newsletter h2 {
+      font-size: 1.5rem;
+    }
+    .newsletter input {
+      width: 100%;
+    }
+  }
+</style>
+
+
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <strong>VictorGraphics Cyber Services</strong>
+          <p>California next to Oasis Korumba Shop</p>
+        </div>
+        <div>
+          <strong>Contact</strong>
+          <p>Phone: 0717379145 / 0732928678</p>
+          <p>Email: victorcomputerservices254@gmail.com</p>
+        </div>
+        <div>
+          <strong>Opening Hours</strong>
+          <p>Mon–Sat: 8:00 — 18:00</p>
+          <p>Sun: Closed</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> VictorGraphics Cyber Services — All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

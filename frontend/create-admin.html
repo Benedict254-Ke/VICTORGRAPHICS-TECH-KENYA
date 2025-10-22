@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create New Admin</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #74ABE2, #5563DE);
+      color: #333;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    form {
+      background: #fff;
+      padding: 40px 35px;
+      border-radius: 12px;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+      width: 360px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    form:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      margin-bottom: 25px;
+      font-weight: 700;
+      font-size: 24px;
+      color: #333;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 18px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+      transition: border 0.3s;
+    }
+
+    input:focus {
+      border: 2px solid #007BFF;
+      outline: none;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 14px;
+      background: #28a745;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    button[type="submit"]:hover {
+      background: #218838;
+      transform: translateY(-2px);
+    }
+
+    p#msg {
+      margin-top: 15px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    p.success { color: green; }
+    p.error { color: red; }
+
+    @media(max-width: 400px) {
+      form { width: 90%; padding: 30px; }
+      h2 { font-size: 20px; }
+      input, button { font-size: 14px; padding: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <form id="createAdminForm">
+    <h2>Create New Admin</h2>
+    <input type="text" id="username" placeholder="Username" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button type="submit">Create Admin</button>
+    <p id="msg"></p>
+  </form>
+
+  <script>
+    const form = document.getElementById('createAdminForm');
+    const msg = document.getElementById('msg');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      try {
+        const res = await fetch("http://localhost:5000/api/admin/create", {
+
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        });
+        const data = await res.json();
+
+        if(data.success){
+          msg.textContent = data.message;
+          msg.className = 'success';
+          form.reset();
+        } else {
+          msg.textContent = data.message;
+          msg.className = 'error';
+        }
+      } catch(err){
+        msg.textContent = "Server error!";
+        msg.className = 'error';
+        console.error(err);
+      }
+    });
+  </script>
+</body>
+</html>

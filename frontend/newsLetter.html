@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Newsletter Subscribers | Admin Dashboard</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #f4f7fa;
+      color: #333;
+      min-height: 100vh;
+    }
+
+    nav {
+      background: #007BFF;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    nav h2 {
+      font-weight: 600;
+    }
+
+    nav .nav-links button {
+      background: #ff416c;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      margin-left: 10px;
+      transition: 0.3s;
+    }
+
+    nav .nav-links button:hover {
+      background: #ff4b2b;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h3 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #007BFF;
+      font-weight: 600;
+      font-size: 1.5em;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+    }
+
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+      font-size: 15px;
+    }
+
+    th {
+      background: #007BFF;
+      color: white;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    tr:hover {
+      background: #f9f9f9;
+      transition: 0.3s;
+    }
+
+    td button {
+      background: #dc3545;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    td button:hover {
+      background: #c82333;
+    }
+
+    #msg {
+      text-align: center;
+      margin-top: 20px;
+      font-weight: 600;
+    }
+
+    .success {
+      color: green;
+    }
+
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h2>Newsletter Subscribers</h2>
+    <div class="nav-links">
+      <button onclick="window.location.href='admin.html'">Dashboard</button>
+      <button id="logoutBtn">Logout</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h3>All Subscribers</h3>
+
+    <table id="subscribersTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Email</th>
+          <th>Date Subscribed</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="4" style="text-align:center;">Loading...</td></tr>
+      </tbody>
+    </table>
+
+    <p id="msg"></p>
+  </div>
+
+  <script>
+    const logoutBtn = document.getElementById('logoutBtn');
+    logoutBtn.addEventListener('click', () => {
+      sessionStorage.clear();
+      window.location.href = 'login.html';
+    });
+
+    async function loadSubscribers() {
+      try {
+        const res = await fetch("http://localhost:5000/newsletter/subscribers");
+        const data = await res.json();
+
+        const tbody = document.querySelector("#subscribersTable tbody");
+        if (!data || data.length === 0) {
+          tbody.innerHTML = `<tr><td colspan="4" style="text-align:center;">No subscribers yet.</td></tr>`;
+          return;
+        }
+
+        tbody.innerHTML = data.map(s => `
+          <tr>
+            <td>${s.id}</td>
+            <td>${s.email}</td>
+            <td>${new Date(s.subscribed_at).toLocaleString()}</td>
+            <td><button onclick="deleteSubscriber(${s.id})">Delete</button></td>
+          </tr>
+        `).join("");
+      } catch (error) {
+        console.error(error);
+        document.querySelector("#msg").textContent = "Failed to load subscribers.";
+      }
+    }
+
+    async function deleteSubscriber(id) {
+      if (!confirm("Are you sure you want to delete this subscriber?")) return;
+
+      try {
+        const res = await fetch(`http://localhost:5000/newsletter/delete/${id}`, { method: "DELETE" });
+        const data = await res.json();
+        alert(data.message || data.error);
+        loadSubscribers();
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    loadSubscribers();
+  </script>
+
+</body>
+</html>
