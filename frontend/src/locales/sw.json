@@ -1,0 +1,395 @@
+{
+  "common": {
+    "loading": "Inapakia...",
+    "error": "Hitilafu",
+    "success": "Mafanikio",
+    "save": "Hifadhi",
+    "cancel": "Ghairi",
+    "delete": "Futa",
+    "edit": "Hariri",
+    "add": "Ongeza",
+    "search": "Tafuta",
+    "filter": "Chuja",
+    "close": "Funga",
+    "open": "Fungua",
+    "yes": "Ndiyo",
+    "no": "Hapana",
+    "submit": "Wasilisha",
+    "reset": "Washa upya",
+    "next": "Ifuatayo",
+    "previous": "Iliyotangulia",
+    "back": "Rudi",
+    "home": "Nyumbani",
+    "about": "Kuhusu",
+    "contact": "Wasiliana",
+    "services": "Huduma",
+    "pricing": "Bei",
+    "gallery": "Maonyesho",
+    "courses": "Kozi",
+    "book": "Weka Nafasi",
+    "learnMore": "Jifunze Zaidi",
+    "viewAll": "Ona Zote",
+    "featured": "Inayojulikana",
+    "popular": " maarufu",
+    "new": "Mpya",
+    "required": "Inahitajika",
+    "optional": "Hiari",
+    "select": "Chagua",
+    "choose": "Chagua",
+    "upload": "Pakia",
+    "download": "Pakua",
+    "share": "Shiriki",
+    "copy": "Nakili",
+    "print": "Chapisha",
+    "email": "Barua pepe",
+    "phone": "Simu",
+    "address": "Anwani",
+    "location": "Mahali",
+    "hours": "Masaa",
+    "minutes": "Dakika",
+    "days": "Siku",
+    "weeks": "Wiki",
+    "months": "Miezi",
+    "year": "Mwaka",
+    "ksh": "KSh",
+    "free": "Bila malipo",
+    "paid": "Imelipwa",
+    "active": "Inatumika",
+    "inactive": "Haifanyi kazi",
+    "pending": "Inasubiri",
+    "completed": "Imekamilika",
+    "cancelled": "Imefutwa",
+    "confirmed": "Imethibitishwa"
+  },
+  "navigation": {
+    "logo": "Victor na Sons Computers & Tech Solutions",
+    "tagline": "Huduma za Mtandaoni & za Kibiashara",
+    "home": "Nyumbani",
+    "services": "Huduma",
+    "courses": "Kozi",
+    "pricing": "Bei",
+    "gallery": "Maonyesho",
+    "about": "Kuhusu",
+    "contact": "Wasiliana",
+    "admin": "Meneja",
+    "language": "Lugha",
+    "menu": "Menyu",
+    "closeMenu": "Funga Menyu",
+    "callUs": "Piga Simu",
+    "whatsapp": "WhatsApp",
+    "getQuote": "Pata Bei"
+  },
+  "home": {
+    "hero": {
+      "title": "Huduma za Kuaminika za Mtandaoni na Kibiashara kwa Watu Binafsi na Biashara",
+      "subtitle": "Uchapishaji • Nakala • E-Citizen • Pasipoti • KRA • Huduma za NTSA na zingine. Haraka, salama, inayoaminika.",
+      "cta1": "Ona Huduma",
+      "cta2": "Weka Nafasi Sasa",
+      "welcome": "Karibu VictorGraphics"
+    },
+    "services": {
+      "title": "Huduma Maarufu",
+      "printing": {
+        "title": "Uchapishaji na Ubunifu",
+        "description": "Kadi za arusi, matangazo, bendera, uchapishaji wa mtandaoni na kufunika."
+      },
+      "government": {
+        "title": "Huduma za E-Citizen na Serikali",
+        "description": "Msaada wa eCitizen, huduma za KRA, NTSA, mikataba ya GHRIS, fomu za NHIF/NSSF."
+      },
+      "documents": {
+        "title": "Waraka na Maombi",
+        "description": "Maombi ya pasipoti, ruhusa za kazi, visa, msaada wa leseni ya uendesha gari."
+      }
+    },
+    "why": {
+      "title": "Kwa Nini Uchague VictorGraphics?",
+      "benefits": [
+        "Ukamilifu wa haraka — uchapishaji na kuchambua wa hali ya juu",
+        "Msaada kwa milango ya serikali na fomu",
+        "Utunzaji salama wa waraka wa kibinafsi"
+      ]
+    },
+    "cta": {
+      "title": "Unataka kuhifadhi nafasi au kuomba uchapishaji maalum?",
+      "description": "Tumia fomu yetu ya kuweka nafasi mtandaoni — tutathibitisha kwa simu au WhatsApp.",
+      "button": "Weka Nafasi Mtandaoni"
+    },
+    "newsletter": {
+      "title": "Jiunge Na Jarida Letu",
+      "description": "Jiandikishe kupata masasisho ya hivi karibuni, matoleo mapya, na ofa maalum kutoka VictorGraphics",
+      "placeholder": "Weka anwani yako ya barua pepe",
+      "button": "Jiandikishe",
+      "success": "Umefanikiwa kujiandikisha!",
+      "error": "Usajili umeshindwa. Tafadhali jaribu tena."
+    }
+  },
+  "services": {
+    "title": "Huduma Zetu",
+    "subtitle": "Mkamiliko wa huduma za mtandaoni za kibiashara",
+    "search": "Tafuta huduma...",
+    "filter": "Chuja kulingana na kategoria",
+    "allCategories": "Kategoria Zote",
+    "categories": {
+      "government": "Huduma za Serikali",
+      "printing": "Huduma za Uchapishaji",
+      "design": "Huduma za Ubunifu",
+      "digital": "Huduma za Kidijitali",
+      "education": "Huduma za Elimu",
+      "immigration": "Huduma za Uhamiaji",
+      "vehicle": "Huduma za Magari",
+      "business": "Huduma za Biashara",
+      "health": "Bima ya Afya",
+      "tax": "Huduma za Kodi",
+      "social": "Huduma za Jamii"
+    },
+    "noResults": "Hakuna huduma zilizopatikana zinazolingana na utafutaji wako",
+    "viewDetails": "Ona Maelezo",
+    "bookService": "Weka Nafasi ya Huduma Hii"
+  },
+  "courses": {
+    "title": "Kozi za Mafunzo ya Kompyuta",
+    "subtitle": "Paketi za kompyuta za kitaalam kwa bei nafuu",
+    "basic": {
+      "title": "Paketi ya Msingi ya Kompyuta",
+      "duration": "mwezi 1 + wiki 2",
+      "price": "2,500",
+      "description": "Utangulizi wa kompyuta, msingi wa Microsoft Office, misingi ya mtandao, na mawasiliano ya barua pepe.",
+      "features": [
+        "Misingi ya kompyuta",
+        "Msingi wa Microsoft Office",
+        "Mtandao na barua pepe",
+        "Usimamizi wa faili"
+      ]
+    },
+    "advanced": {
+      "title": "Paketi ya Juu ya Kompyuta",
+      "duration": "miezi 3",
+      "price": "3,500",
+      "description": "Microsoft Office ya juu, uchapishaji wa mezani, ubunifu wa picha wa msingi, na matengenezo ya kompyuta.",
+      "features": [
+        "Microsoft Office ya juu",
+        "Uchapishaji wa mezani",
+        "Ubunifu wa picha wa msingi",
+        "Matengenezo ya kompyuta"
+      ]
+    },
+    "professional": {
+      "title": "Paketi ya kitaalamu ya Kompyuta",
+      "duration": "miezi 6",
+      "price": "6,000",
+      "description": "Mafunzo kamili ya kompyuta ikiwa ni pamoja na upangaji programu, ubunifu wa tovuti, picha za juu, na msaada wa IT.",
+      "features": [
+        "Misingi ya upangaji programu",
+        "Misingi ya ubunifu wa tovuti",
+        "Picha za juu",
+        "Ujuzi wa msaada wa IT"
+      ]
+    },
+    "enroll": "Jiunge Sasa",
+    "includes": "Kozi inajumuisha:",
+    "certificate": "Cheti baada ya kumaliza",
+    "materials": "Vifaa vya mafunzo vimetolewa",
+    "support": "Msaada unaoendelea umehuishwa"
+  },
+  "pricing": {
+    "title": "Bei za Huduma",
+    "subtitle": "Bei wazi kwa huduma zetu zote",
+    "service": "Huduma",
+    "price": "Bei",
+    "description": "Maelezo",
+    "contactForQuote": "Wasiliana kwa bei",
+    "startingFrom": "Kuanzia",
+    "perItem": "kwa kila kitu",
+    "perHour": "kwa kila saa",
+    "customPricing": "Bei maalum inapatikana",
+    "bulkDiscount": "Punguzo kwa wingi lina patikana"
+  },
+  "gallery": {
+    "title": "Maonyesho ya Kazi Zetu",
+    "subtitle": "Onyesho la kazi yetu ya uchapishaji na ubunifu",
+    "categories": "Kategoria",
+    "all": "Zote",
+    "wedding": "Kadi za Arusi",
+    "posters": "Matangazo",
+    "business": "Kadi za Biashara",
+    "banners": "Bendera",
+    "certificates": "Vyeti",
+    "noImages": "Hakuna picha zilizopatikana",
+    "viewLarger": "Ona picha kubwa",
+    "imageNotFound": "Picha haipatikani"
+  },
+  "contact": {
+    "title": "Wasiliana Nasi",
+    "subtitle": "Piga mawasiliano nasi kwa mahitaji yako ya huduma za mtandaoni",
+    "form": {
+      "name": "Jina Kamili",
+      "email": "Anwani ya Barua Pepe",
+      "phone": "Nambari ya Simu",
+      "subject": "Mada",
+      "message": "Ujumbe",
+      "serviceInterest": "Masharti ya Huduma",
+      "preferredDate": "Tarehe Ilivyopendelewa",
+      "submit": "Tuma Ujumbe",
+      "success": "Ujumbe umetumwa kwa mafanikio! Tutakupigia hivi karibuni.",
+      "error": "Imeshindwa kutuma ujumbe. Tafadhali jaribu tena."
+    },
+    "info": {
+      "address": "California karibu na duka la Oasis Korumba",
+      "phone": "+254 717 379 145 / +254 732 928 67",
+      "email": "victorcomputerservices254@gmail.com",
+      "hours": "Mon–Sat: 8:00–18:00",
+      "closed": "Jumapili: Imefungwa"
+    },
+    "actions": {
+      "call": "Piga Simu Sasa",
+      "whatsapp": "Zungumza kwenye WhatsApp",
+      "email": "Tuma Barua Pepe",
+      "directions": "Puta Maelekezo"
+    }
+  },
+  "about": {
+    "title": "Kuhusu VictorGraphics",
+    "subtitle": "Mshirika wako wa kuaminika kwa huduma za mtandaoni na kibiashara Kenya",
+    "story": "Hadithi Yetu",
+    "storyContent": "Victor na Sons Computers & Tech Solutions Kenya imekuwa ikitoa huduma za kuaminika za mtandaoni na za kibiashara kwa watu binafsi na biashara nchini Kenya. Kwa miaka ya uzoefu katika tasnia hii, tumefanya sifa kwa ubora, uhuru, na huduma bora kwa wateja.",
+    "mission": "Dhamira Yetu",
+    "missionContent": "Kutoa huduma za mtandaoni na za kidijitali zinazokwenda haraka, zinazosalama, na zinazopatikana kwa bei nafuu zinazowawezesha watu binafsi na biashara kufikia malengo yao kupitia teknolojia.",
+    "vision": "Dhamira Yetu",
+    "visionContent": "Kuwa mtoaji wa huduma za mtandaoni na za kidijitali anayeoongoza Kenya, anayejulikana kwa ubunifu, uhuru, na uridhi wa wateja.",
+    "values": {
+      "title": "Thamani Zetu",
+      "quality": "Ubora",
+      "integrity": "Usalama",
+      "reliability": "Uhuru",
+      "innovation": "Ubunifu"
+    }
+  },
+  "admin": {
+    "login": {
+      "title": "Ingia kwa Meneja",
+      "email": "Barua pepe",
+      "password": "Nywila",
+      "remember": "Nikumbuke",
+      "submit": "Ingia",
+      "error": "Vibali sio sahihi",
+      "success": "Umeingia kwa mafanikio"
+    },
+    "dashboard": {
+      "title": "Dashibodi ya Meneja",
+      "welcome": "Karibu tena",
+      "overview": "Muhtasari",
+      "stats": {
+        "totalServices": "Jumla ya Huduma",
+        "totalBookings": "Jumla ya Nafasi",
+        "totalSubscribers": "Wanajiandikisha wa Jarida",
+        "totalMessages": "Ujumbe wa Mawasiliano",
+        "pendingBookings": "Nafasi Zinazosubiri",
+        "recentBookings": "Nafasi za Karibuni",
+        "recentMessages": "Ujumbe wa Karibuni"
+      },
+      "quickActions": "Hatua za Haraka",
+      "manageServices": "Simamia Huduma",
+      "manageBookings": "Simamia Nafasi",
+      "manageGallery": "Simamia Maonyesho",
+      "viewReports": "Ona Ripoti"
+    },
+    "services": {
+      "title": "Simamia Huduma",
+      "addService": "Ongeza Huduma Mpya",
+      "editService": "Hariri Huduma",
+      "serviceForm": {
+        "title": "Kichwa cha Huduma",
+        "slug": "Slug ya URL",
+        "description": "Maelezo",
+        "category": "Kategoria",
+        "price": "Bei (KSh)",
+        "featured": "Huduma Inayojulikana",
+        "active": "Inatumika",
+        "save": "Hifadhi Huduma",
+        "cancel": "Ghairi"
+      },
+      "actions": "Hatua",
+      "noServices": "Hakuna huduma zilizopatikana"
+    },
+    "bookings": {
+      "title": "Simamia Nafasi",
+      "export": "Toa CSV",
+      "status": "Hali",
+      "customer": "Mteja",
+      "service": "Huduma",
+      "date": "Tarehe",
+      "noBookings": "Hakuna nafasi zilizopatikana",
+      "markConfirmed": "Alama kama Imethibitishwa",
+      "markCompleted": "Alama kwa Imekamilika",
+      "markCancelled": "Alama kwa Imefutwa"
+    },
+    "gallery": {
+      "title": "Simamia Maonyesho",
+      "uploadImage": "Pakia Picha",
+      "imageTitle": "Kichwa cha Picha",
+      "altText": "Maandishi ya Alt",
+      "category": "Kategoria",
+      "noImages": "Hakuna picha zilizopatikana",
+      "upload": "Pakia Picha",
+      "dragDrop": "Buruta na ushue picha hapa au bofya kubrowser"
+    },
+    "settings": {
+      "title": "Mipangilio",
+      "businessInfo": "Maelezo ya Biashara",
+      "businessName": "Jina la Biashara",
+      "businessEmail": "Barua pepe ya Biashara",
+      "businessPhone": "Simu ya Biashara",
+      "businessAddress": "Anwani ya Biashara",
+      "businessHours": "Masaa ya Biashara",
+      "save": "Hifadhi Mipangilio",
+      "saved": "Mipangilio imedhibitiwa kwa mafanikio"
+    }
+  },
+  "footer": {
+    "tagline": "Huduma za Mtandaoni za VictorGraphics",
+    "description": "Mshirika wako wa kuaminika kwa huduma za mtandaoni na za kidijitali",
+    "quickLinks": "Viungo vya Haraka",
+    "services": "Huduma",
+    "contact": "Wasiliana",
+    "hours": "Masaa ya Ufunguzi",
+    "social": "Tufuate",
+    "rights": "Haki zote zimehifadhiwa",
+    "privacy": "Sera ya Faragha",
+    "terms": "Masharti ya Huduma"
+  },
+  "errors": {
+    "404": {
+      "title": "Ukurasa Haujapatikana",
+      "description": "Ukurasa unaotafuta haupo.",
+      "button": "Rudi Nyumbani"
+    },
+    "500": {
+      "title": "Hitilafu ya Seva",
+      "description": "Hitilafu imetokea upande wetu. Tafadhali jaribu tena baadaye.",
+      "button": "Jaribu Tena"
+    },
+    "network": {
+      "title": "Hitilafu ya Mtandao",
+      "description": "Tafadhali angalia muunganisho wako wa mtandao na ujaribu tena.",
+      "button": "Jaribu Tena"
+    }
+  },
+  "validation": {
+    "required": "Sehemu hii inahitajika",
+    "email": "Tafadhali ingia anwani sahihi ya barua pepe",
+    "phone": "Tafadhali ingia nambari sahihi ya simu",
+    "minLength": "Inapaswa kuwa herufi {{count}} au zaidi",
+    "maxLength": "Inapaswa kuwa chini ya herufi {{count}}",
+    "password": "Nywila inapaswa kuwa na herufi kubwa, ndogo, namba, na herufi maalum",
+    "confirmPassword": "Nywila hazilingani"
+  },
+  "messages": {
+    "success": "Opereshia imekamilika kwa mafanikio",
+    "error": "Hitilafu imetokea. Tafadhali jaribu tena",
+    "loading": "Tafadhali subiri...",
+    "noData": "Hakuna data inayopatikana",
+    "confirmDelete": "Una uhakika unataka kufuta kipau hiki?",
+    "unsavedChanges": "Una mabadiliko yasiyohifadhiwa. Una uhakika unataka kuondoka?"
+  }
+}
