@@ -1,21 +1,38 @@
 {
-  "name": "backend",
-  "version": "1.0.0",
-  "description": "",
+  "name": "victorgraphics-backend",
+  "version": "2.0.0",
+  "description": "Backend API for Victor and Sons Computers & Tech Solutions Kenya",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "migrate": "node database/migration.js",
+    "seed": "node database/seed.js",
+    "setup": "npm install && npm run migrate && npm run seed"
   },
-  "keywords": [],
-  "author": "Benedict254-Ke",
-  "license": "ISC",
+  "keywords": ["cyber-services", "printing", "e-citizen", "kenya", "tech-solutions"],
+  "author": "VictorGraphics Tech Kenya",
+  "license": "MIT",
   "dependencies": {
-    "body-parser": "^2.2.0",
+    "express": "^4.18.2",
     "cors": "^2.8.5",
-    "express": "^5.1.0",
-    "express-session": "^1.18.2",
-    "nodemon": "^3.1.10",
-    "sqlite3": "^5.1.7"
+    "body-parser": "^1.20.2",
+    "sqlite3": "^5.1.7",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "nodemailer": "^6.9.8",
+    "multer": "^1.4.5-lts.1",
+    "express-rate-limit": "^7.1.5",
+    "helmet": "^7.1.0",
+    "express-validator": "^7.0.1",
+    "dotenv": "^16.3.1",
+    "compression": "^1.7.4",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   }
 }
